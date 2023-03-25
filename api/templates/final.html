@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MySQL Data</title>
+    <style>
+        .green{
+            background-color: aquamarine;
+            border: 3px solid seagreen;
+            
+        }
+    </style>
+  </head>
+  <body>
+    <h1>MySQL Data</h1>
+    <table>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+      </tr>
+      {% for row in data %}
+      <div class="green">
+      <tr class='green'>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+      </tr>
+    </div>
+      {% endfor %}
+    </table>
+  </body>
+</html>
