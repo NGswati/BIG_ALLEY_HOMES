@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/ba-fav.png" />
+    <title>Real estate | Big Alley Home</title>
+    <meta name="description" content="A simple grid-powered multibox menu that shows with a reveal animation." />
+    <meta name="keywords" content="slideshow, reveal, effect, animation, web design, template, demo" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-5.15.3-web/css/all.css') }}">
+
+    <script src="{{ url_for('static', filename='fontawesome.min.js') }}"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='updatedcss.css') }}">
+    
+    
+    
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='project-style.css') }}">
+
+    <script src="{{ url_for('static', filename='all.min.js') }}"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome.min.css') }}">
+    
+
+    <link href="{{ url_for('static', filename='oswald.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='roboto.css') }}" rel="stylesheet">
+
+    
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='logon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+   
+    <script>
+        #heading{
+            background: url("{{ url_for('static', filename='f1.jpg') }}");
+        }
+    </script>
+
+    <style>
+        .menu__item-map {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url("{{ url_for('static', filename='dl.jpg') }}") no-repeat 50% 50%;
+            background-size: cover;
+            transition: transform 0.8s cubic-bezier(0.2, 1, 0.8, 1);
+        }
+    </style>
+
+</head>
+
+<body id="mbody" class="site-main-wrapper loading">
+    <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+        <g fill-rule="evenodd">
+            <symbol id="icon-menu" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+                <title>menu</title>
+                <path d="M1052 92.168 959.701 0-.234 959.935 959.701 1920l92.299-92.43-867.636-867.635L1052 92.168Z" />
+                <path d="M1920 92.168 1827.7 0 867.766 959.935 1827.7 1920l92.3-92.43-867.64-867.635L1920 92.168Z" />
+
+            </symbol>
+            <g fill-rule="evenodd">
+                <symbol id="icon-close" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+                    <title>close</title>
+                    <path d="M0 92.168 92.299 0l959.931 959.935L92.299 1920 0 1827.57l867.636-867.635L0 92.168Z" />
+                    <path
+                        d="M868 92.168 960.299 0l959.931 959.935L960.299 1920 868 1827.57l867.64-867.635L868 92.168Z" />
+                </symbol>
+    </svg>
+
+    <main>
+        <div class="frame">
+            <header class="header--logo">
+                <div class="logo--links">
+                    <img  width=67% src="{{ url_for('static', filename='balog.png') }}" />
+                </div>
+            </header>
+        </div>
+
+        <div class="menu-wrapper">
+            <img class="d-block w-100" src="{{ url_for('static', filename='bg2.jpg') }}" alt="First slide">
+            <!-- <h1 id="heading"> BIG ALLEY HOMES </h1> -->
+            <h3 id="heading1">Where Your Dreams Come True !</h3>
+        </div>
+
+
+        <nav class="menu menu-index">
+
+            <div class="menu__item menu__item--1" data-direction="bt">
+                <div class="menu__item-inner">
+                    <div class="mainmenu">
+                        <a href="{{ url_for('index') }}" class="mainmenu__item">Home</a>
+                        <a href="{{ url_for('agent') }}" class="mainmenu__item">Agent</a>
+                        <a href="{{ url_for('agent_office') }}" class="mainmenu__item">Agent Office</a>
+                        <a href="{{ url_for('admin') }}" class="mainmenu__item">Admin</a>
+                        <a href="{{ url_for('index') }}" class="mainmenu__item">Contact</a>
+                    </div>
+                    <p id="madel" class=" label label--topleft label--vert-mirror">-- made with ♡ --</p>
+                    <p id="madel1" class=" label label--bottomright label--vert">-- made with ♡ --</p>
+                </div>
+            </div>
+            <div class="menu__item menu__item--2" data-direction="lr">
+                <div class="menu__item-inner">
+                    <div class="menu__item-map"></div>
+                    <a href="{{ url_for('index') }}" class="mainmenu__item">Navigate with ease</a>
+                </div>
+            </div>
+            <div class="menu__item menu__item--3" data-direction="bt">
+                <div class="menu__item-inner">
+                    <div class="sidemenu">
+                        <p font="bold" class="sidemenu__item"><span class="sidemenu__item-inner">Home is <br><br> the
+                                starting place <br><br> of Love <br><br> Hope <br><br> & Dreams.</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__item menu__item--4" data-direction="rl">
+                <div class="menu__item-inner">
+                    <p class="label label--topleft label--line">Join us now</p>
+                </div>
+            </div>
+            <div class="menu__item menu__item--5" data-direction="tb">
+                <div class="menu__item-inner">
+                    <p class="quote">Greetings From the BIG ALLEY HOMES !!</p>
+                </div>
+            </div>
+            <button class="action action--menu"><svg class="icon icon--menu">
+                    <use xlink:href="#icon-menu"></use>
+                </svg></button>
+            <button class="action action--close"><svg class="icon icon--close">
+                    <use xlink:href="#icon-close"></use>
+                </svg></button>
+        </nav>
+        <!-- <button type="submit"></button> -->
+    </main>
+
+    <main-body class="main-body">
+
+        <section class="section--about">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6 order-2 order-md-1 mt-4 pt-2 mt-sm-0 opt-sm-0">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-6 col-6">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 mt-4 pt-2">
+                                        <div
+                                            class="card about-card-item--single rounded border-0 shadow-lg overflow-hidden">
+                                            <img src="{{ url_for('static', filename='ftr4.jpg') }}" class="about-item--image img-fluid" alt="Image" />
+                                            <div class="about-item-img--overlay bg-dark"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="mt-4 pt-2 text-right">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-6">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <div
+                                            class="card about-card-item--single rounded border-0 shadow-lg overflow-hidden">
+                                            <img src="{{ url_for('static', filename='ftr2.jpg') }}" class="about-item--image img-fluid" alt="Image" />
+                                            <div class="about-item-img--overlay bg-dark"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 mt-4 pt-2">
+                                        <div
+                                            class="card about-card-item--single rounded border-0 shadow-lg overflow-hidden">
+                                            <img src="{{ url_for('static', filename='ftr3.jpg') }}" class="about-item--image img-fluid" alt="Image" />
+                                            <div class="about-item-img--overlay bg-dark"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+
+                    <div class="col-lg-6 col-md-6 col-12 order-1 order-md-2">
+                        <div class="about-section--title ml-lg-5">
+                            <h5 class="text-custom font-weight-normal mb-3">ABOUT OUR COMPANY</h5>
+                            <h4 class="about-section--sub-title mb-4">
+                                We've been providing<br>
+                                wonders Since 2000
+                            </h4>
+                            <p class="mb-0">We are thrilled to welcome you to BIG ALLEY, your premier destination for all your real
+                            estate needs in the
+                            vibrant and bustling city of Delhi. As a leading real estate company, we pride ourselves
+                            on providing top-notch services
+                            that are tailored to meet your unique needs and preferences..</p>
+                            <p>At BIG ALLEY, we offer a wide range of properties that are designed to cater to
+                            different lifestyles and
+                            preferences. From luxurious apartments to spacious villas, we have it all.</p>
+
+                            <p></p>
+                    
+                            <div class="row">
+                                <div class="col-lg-6 mt-4 pt-2">
+                                    <div class="media about-project--short-overview btn-ripple align-items-center shadow">
+                                        <i class="fa fa-crown h4 mb-0 text-custom"></i>
+                                        <div class="media-body mt-3">
+                                            <h6 class="ml-3 mb-0">200+</h6>
+                                            <p class="ml-3 mb-0">Project Done</p>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mt-4 pt-2">
+                                    <div class="media about-project--short-overview btn-ripple align-items-center shadow">
+                                        <i class="fa fa-smile h4 mb-0 text-custom"></i>
+                                        <div class="media-body mt-3">
+                                            <h6 class="ml-3 mb-0">180+</h6>
+                                            <p class="ml-3 mb-0">happy Client</p>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mt-4 pt-2">
+                                    <div class="media about-project--short-overview btn-ripple align-items-center shadow">
+                                        <i class="fa fa-user h4 mb-0 text-custom"></i>
+                                        <div class="media-body mt-3">
+                                            <h6 class="ml-3 mb-0">500+</h6>
+                                            <p class="ml-3 mb-0">Total Employee</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mt-4 pt-2">
+                                    <div class="media about-project--short-overview btn-ripple align-items-center shadow">
+                                        <i class="fa fa-building h4 mb-0 text-custom"></i>
+                                        <div class="media-body mt-3">
+                                            <h6 class="ml-3 mb-0">20+</h6>
+                                            <p class="ml-3 mb-0">Ongoing Project</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+
+
+
+    </main-body>
+    <section id="features">
+        <br><br><br>
+        <div class="row">
+
+            <div class="feature-box col-lg-4">
+                <i id="ftr_img" class="ftr_icon fa-solid fa-face-smile fa-2xl"></i>
+                <br><br><br>
+                <h3>Happy Customers</h3>
+                <p>Helping thousands of families to settle well.</p>
+            </div>
+
+            <div class="feature-box col-lg-4">
+                <i id="ftr_img" class="ftr_icon fa-solid fa-building fa-2xl"></i>
+                <br><br><br>
+                <h3>Elite Listings</h3>
+                <p>Range of Top notch Houses and Properties for Everyone</p>
+            </div>
+
+            <div class="feature-box col-lg-4">
+                <i id="ftr_img" class="ftr_icon fa-solid fa-user fa-2xl"></i>
+                <br><br><br>
+                <h3>Committed to work.</h3>
+                <p>Employees available for your help and support.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter  fluid-container">
+        <h2>Have Question in mind? <br>Let us help you</h2>
+        <form action="mailto:swatihass@gmail.com">
+            <input type="text" name="" id="email-box" placeholder="type your Question" required>
+            <input type="submit" value="Send" class="btn">
+        </form>
+    </section>
+
+    <section class="footer">
+        <div class="footer-container container">
+            <h2 id="foot2">BIG ALLEY HOMES</h2>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <a href="{{ url_for('index') }}" >Home</a>
+                <a href="{{ url_for('agent') }}" >Agent</a>
+                <a href="{{ url_for('agent_office') }}" >Agent Office</a>
+                <a href="{{ url_for('admin') }}" >Admin</a>
+               
+            </div>
+            
+
+            <div class="footer-box">
+                <h3>Contact
+                </h3>
+                <div id="btn-out" class="dropup">
+                    <button class="btn btn-secondary dropdown-toggle" role="button" data-toggle="dropdown" aria-type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Owners
+                    </button>
+                    <ul id="dropup con" class="dropdown-menu" style="">
+                        <li><a class="dropdown-item conli" href="https://www.linkedin.com/in/vasu-pandey-21581b225">Vasu Pandey</a></li>
+                        <li><a class="dropdown-item conli" href="index">Nandini Thakur</a></li>
+                        <li><a class="dropdown-item conli" href="index">Surbhi Soni</a></li>
+                        <li><a class="dropdown-item conli" href="index">Swati Nanda Gupta</a></li>
+                    </ul>
+                </div>
+
+                <br>
+                <div class="social">
+                    <a href="https://github.com/NGswati/BIG_ALLEY_HOMES"><i class="fa-brands fa-github fa-xl"></i></a>
+                    &nbsp;&nbsp;
+                    <a href="index"><i class="fa-solid fa-house fa-xl"></i></a>
+                    &nbsp;&nbsp;
+                    <a href="https://docs.google.com/document/d/1qvDTFUKcrgn6nu3WPBQ5vOUJ0Fm1d9jB6CmHhrpNh2s/edit"><i
+                            class="fa-brands fa-dochub fa-xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p id="copyright">© Copyright 2000 | Big Alley Homes </p>
+        </div>
+    </section>
+
+
+    <script src="{{ url_for('static', filename='jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='fontawesome.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='brands.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='solid.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='TweenMax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='full-screen-nav.js') }}"></script>
+    <script src="{{ url_for('static', filename='maps.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugin.js') }}"></script>
+</body>
+
+</html>

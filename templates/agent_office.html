@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Internet EXplorar Meta-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- First Mobile Meta-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agent Office</title>
+    
+    <link rel="icon" href="{{ url_for('static', filename='ba-fav.png') }}">
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+   <!-- Include Bootstrap 5.3.0-alpha1 CSS and JS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+<!-- Include Bootstrap 5.3.0-alpha3 CSS and JS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}" integrity="sha384-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" crossorigin="anonymous">
+<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+
+<!-- Include your custom CSS files -->
+<link rel="stylesheet" href="{{ url_for('static', filename='updatedcss.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='project-style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='end.css') }}">
+<style>
+    .menu__item-map {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url("{{ url_for('static', filename='dl.jpg') }}") no-repeat 50% 50%;
+        background-size: cover;
+        transition: transform 0.8s cubic-bezier(0.2, 1, 0.8, 1);
+    }
+</style>
+
+    <!-- My Style CSS-->
+</head>
+
+<body class="main-body">
+    <svg class="hidden" width="800px" height="800px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <g fill-rule="evenodd">
+            <symbol id="icon-menu" id="invisible_box" data-name="invisible box" viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg">
+                <title>menu-hamburger</title>
+                <path d="M42,12a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2H6a2,2,0,0,1,2-2H40a2,2,0,0,1,2,2Z" />
+                <path d="M42,24a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2H6a2,2,0,0,1,2-2H40a2,2,0,0,1,2,2Z" />
+                <path d="M42,36a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2H6a2,2,0,0,1,2-2H40a2,2,0,0,1,2,2Z" />
+
+            </symbol>
+            <g fill-rule="evenodd">
+                <symbol id="icon-close" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+                    <title>close</title>
+                    <path d="M0 92.168 92.299 0l959.931 959.935L92.299 1920 0 1827.57l867.636-867.635L0 92.168Z" />
+                    <path
+                        d="M868 92.168 960.299 0l959.931 959.935L960.299 1920 868 1827.57l867.64-867.635L868 92.168Z" />
+                </symbol>
+            </g>
+    </svg>
+    <main style="padding-bottom: 20%;">
+        <div class="frame">
+            <header class="header--logo">
+                <div class="logo--links">
+                    <img src="{{ url_for('static', filename='balog.png') }}" width="62%">
+                </div>
+            </header>
+        </div>
+
+        <div class="menu-wrapper">
+            <img  style="width: 100%; height: 50%;" src="{{ url_for('static', filename='aot.jpg') }}" alt="First slide">
+            <a href="{{ url_for('reports_auth') }}" class="btnn" id="btnn1" title="Agent Reports">Agent Reports</a>
+            <a href="{{ url_for('listings') }}" class="btnn" id="btnn2" style="--c:#E95A49">Listing Details</a>
+            
+        </div>
+
+
+        <nav class="menu menu-index">
+
+            <div class="menu__item menu__item--1" data-direction="bt">
+                <div class="menu__item-inner">
+                    <div class="mainmenu">
+                        <a href="{{ url_for('index') }}" class="mainmenu__item">Home</a>
+                        <a href="{{ url_for('agent') }}" class="mainmenu__item">Agent</a>
+                        <a href="{{ url_for('agent_office') }}" class="mainmenu__item">Agent Office</a>
+                        <a href="{{ url_for('admin') }}" class="mainmenu__item">Admin</a>
+                        
+                    </div>
+                    <p id="madel" class=" label label--topleft label--vert-mirror">-- made with ♡ --</p>
+                    <p id="madel1" class=" label label--bottomright label--vert">-- made with ♡ --</p>
+                </div>
+            </div>
+            <div class="menu__item menu__item--2" data-direction="lr">
+                <div class="menu__item-inner">
+                    <div class="menu__item-map"></div>
+                    <a href="#" class="menu__item-hoverlink">Navigate With Ease</a>
+                </div>
+            </div>
+            <div class="menu__item menu__item--3" data-direction="bt">
+                <div class="menu__item-inner">
+                    <div class="sidemenu">
+                        <p font="bold" class="sidemenu__item"><span class="sidemenu__item-inner">Home is <br><br> the
+                                starting place <br><br> of Love <br><br> Hope <br><br> & Dreams.</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__item menu__item--4" data-direction="rl">
+                <div class="menu__item-inner">
+                    <p class="label label--topleft label--line">Join us now</p>
+                </div>
+            </div>
+            <div class="menu__item menu__item--5" data-direction="tb">
+                <div class="menu__item-inner">
+                    <p class="quote">Greetings From the BIG ALLEY HOMES !!</p>
+                </div>
+            </div>
+            <button class="action action--menu"><svg class="icon icon--menu">
+                    <use xlink:href="#icon-menu"></use>
+                </svg></button>
+            <button class="action action--close"><svg class="icon icon--close">
+                    <use xlink:href="#icon-close"></use>
+                </svg></button>
+        </nav>
+        <!-- <button type="submit"></button> -->
+    </main>
+
+    <section class="footer">
+        <div class="footer-container container">
+            <h2 id="foot2">BIG ALLEY HOMES</h2>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <a href="index copy.html">Home</a>
+                <a href="login.html">Agent</a>
+                <a href="agent_office.html">Agent Office</a>
+                <a href="#">Admin</a>
+            </div>
+
+
+            <div class="footer-box">
+                <h3>Contact
+                </h3>
+                <div id="btn-out" class="dropup">
+                    <button class="btn btn-secondary dropdown-toggle" role="button" data-toggle="dropdown"
+                        aria-type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Owners
+                    </button>
+                    <ul id="dropup con" class="dropdown-menu" style="">
+                        <li><a class="dropdown-item conli" href="https://www.linkedin.com/in/vasu-pandey-21581b225">Vasu
+                                Pandey</a></li>
+                        <li><a class="dropdown-item conli" href="#">Nandini Thakur</a></li>
+                        <li><a class="dropdown-item conli" href="#">Surbhi Soni</a></li>
+                        <li><a class="dropdown-item conli" href="#">Swati Nanda Gupta</a></li>
+                    </ul>
+                </div>
+
+                <br>
+                <div class="social">
+                    <a href="https://github.com/NGswati/BIG_ALLEY_HOMES"><i class="fa-brands fa-github fa-xl"></i></a>
+                    &nbsp;&nbsp;
+                    <a href="index copy.html"><i class="fa-solid fa-house fa-xl"></i></a>
+                    &nbsp;&nbsp;
+                    <a href="https://docs.google.com/document/d/1qvDTFUKcrgn6nu3WPBQ5vOUJ0Fm1d9jB6CmHhrpNh2s/edit"><i
+                            class="fa-brands fa-dochub fa-xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p id="copyright">© Copyright 2000 | Big Alley Homes </p>
+        </div>
+    </section>
+
+
+    <script src="{{ url_for('static', filename='jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='fontawesome.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='brands.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='solid.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='TweenMax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='full-screen-nav.js') }}"></script>
+    <script src="{{ url_for('static', filename='maps.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugin.js') }}"></script>
+
+</html>

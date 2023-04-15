@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='ba-fav.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='end.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='listings.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+  
+
+    <title>Listings</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="nav container-fluid">
+            <a href="{{ url_for('index') }}" class="logo"><i class='bx bx-home'></i>BIG ALLEY HOMES</a>
+
+        </div>
+    </header>
+
+    <div class="menu-wrapper">
+        <img  style="width: 100%;" src="{{ url_for('static', filename='aot.jpg') }}" alt="First slide">
+    </div>
+
+    <div id="tab" class="center">
+        <h1 id="boxl">Fetch Tables in Database</h1>
+        <form method="POST" action="/fetch_tables">
+            <div class="inputbox">
+                <input type="text" required="required" name="table">
+                <span>Table</span>
+            </div>
+            <div class="inputbox">
+
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <div id="tab1" class="center">
+        <h1 id="boxr">Rent Report By Each Agent</h1>
+        <form method="POST" action="/rent">
+            <div class="inputbox">
+                <input type="submit" value="View">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

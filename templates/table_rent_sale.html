@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MySQL Data</title>
+    <style>
+        .green{
+            background-color: aquamarine;
+            border: 3px solid seagreen;
+        }
+        .table{
+            margin-top: 50px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>MySQL Data</h1>
+    <div class="table">
+        <table>
+          <tr>
+            {% for column in data[0] %}
+            <th>{{ column }}</th>
+            {% endfor %}
+          </tr>
+          {% for row in data %}
+          <div class="green">
+          <tr class='green'>
+            {% for column in row %}
+            <td>{{ column }}</td>
+            {% endfor %}
+          </tr>
+          </div>
+          {% endfor %}
+        </table>
+    </div>
+    <div>
+        <img src="{{ url_for('static', filename='sales_rent.png') }}"  alt="Image" />
+    </div>
+  </body>
+</html>

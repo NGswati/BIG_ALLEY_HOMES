@@ -1,0 +1,29 @@
+#heading {
+    color: white !important;
+    font-size: 4rem;
+    z-index: 1;
+    size: 3rem;
+    position: absolute;
+    top: 46%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+}
+
+
+#features {
+    padding: 7% 15%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background-color: #fffcfc;
+}
+
+
+
+#logo {
+    width: "60px";
+}
+
+#ftr_img {
+    width: 2rem;
+}
