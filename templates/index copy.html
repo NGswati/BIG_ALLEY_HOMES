@@ -4,16 +4,42 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="img/ba-fav.png" />
+
     <title>Real estate | Big Alley Home</title>
     <meta name="description" content="A simple grid-powered multibox menu that shows with a reveal animation." />
     <meta name="keywords" content="slideshow, reveal, effect, animation, web design, template, demo" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-5.15.3-web/css/all.css') }}">
+    <script src="https://kit.fontawesome.com/5571188888.js" crossorigin="anonymous"></script>
 
     <script src="{{ url_for('static', filename='fontawesome.min.js') }}"></script>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='updatedcss.css') }}">
-    
+    <script src="{{ url_for('static', filename='jquery-3.1.1.min.js') }}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='responsive.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='project-style.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cover.css') }}" />
+   
+    <script src="{{ url_for('static', filename='fontawesome.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='brands.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='solid.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='TweenMax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='full-screen-nav.js') }}"></script>
+    <script src="{{ url_for('static', filename='maps.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugin.js') }}"></script>
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
     
     
 
@@ -28,12 +54,12 @@
     <link href="{{ url_for('static', filename='roboto.css') }}" rel="stylesheet">
 
     
-    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='logon.png') }}">
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='ba-fav.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
     <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
-   
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
     <script>
         #heading{
             background: url("{{ url_for('static', filename='f1.jpg') }}");
@@ -50,6 +76,68 @@
             background: url("{{ url_for('static', filename='dl.jpg') }}") no-repeat 50% 50%;
             background-size: cover;
             transition: transform 0.8s cubic-bezier(0.2, 1, 0.8, 1);
+        }
+        .btn {
+            padding: 8px 22px;
+            background: var(--main-color);
+            color: var(--bg-color);
+            border-radius: 5rem;
+        }
+        
+        .btn:hover {
+            background: #3492fd;
+        }
+        .dropdown-menu {
+            background-color: #192f6a;
+            color: white;
+        }
+  
+        
+        .dropup {
+            width: 3rem;
+        }
+        .footer {
+           
+            color: azure;
+            border-radius: 5rem 0 0 0;
+            opacity: 100%;
+            background-image: "{{ url_for('static', filename='footer.png') }}";
+            padding: 4%;
+        }
+        
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+            gap: 2rem;
+            padding: 2%;
+        }
+        
+        .footer-container h2 {
+            font-size: 1.7rem;
+            font-weight: 500;
+        }
+        
+        .footer-box {
+            /* display: flex;
+            flex-direction: column; */
+        }
+        
+        .footer-box h3 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        
+        .footer-box a {
+            font-size: 0.8rem;
+            color: var(--bg-color);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-box a:hover {
+            color: black;
         }
     </style>
 
@@ -150,7 +238,7 @@
                                     <div class="col-lg-12 col-md-12 mt-4 pt-2">
                                         <div
                                             class="card about-card-item--single rounded border-0 shadow-lg overflow-hidden">
-                                            <img src="{{ url_for('static', filename='ftr4.jpg') }}" class="about-item--image img-fluid" alt="Image" />
+                                            <img src="{{ url_for('static', filename='f4.jpg') }}" class="about-item--image img-fluid" alt="Image" />
                                             <div class="about-item-img--overlay bg-dark"></div>
                                         </div>
                                     </div>
@@ -167,7 +255,7 @@
                                     <div class="col-lg-12 col-md-12">
                                         <div
                                             class="card about-card-item--single rounded border-0 shadow-lg overflow-hidden">
-                                            <img src="{{ url_for('static', filename='ftr2.jpg') }}" class="about-item--image img-fluid" alt="Image" />
+                                            <img src="{{ url_for('static', filename='abt.jpg') }}" class="about-item--image img-fluid" alt="Image" />
                                             <div class="about-item-img--overlay bg-dark"></div>
                                         </div>
                                     </div>
@@ -175,7 +263,7 @@
                                     <div class="col-lg-12 col-md-12 mt-4 pt-2">
                                         <div
                                             class="card about-card-item--single rounded border-0 shadow-lg overflow-hidden">
-                                            <img src="{{ url_for('static', filename='ftr3.jpg') }}" class="about-item--image img-fluid" alt="Image" />
+                                            <img src="{{ url_for('static', filename='f5.jpg') }}" class="about-item--image img-fluid" alt="Image" />
                                             <div class="about-item-img--overlay bg-dark"></div>
                                         </div>
                                     </div>
@@ -307,17 +395,18 @@
                 <h3>Contact
                 </h3>
                 <div id="btn-out" class="dropup">
-                    <button class="btn btn-secondary dropdown-toggle" role="button" data-toggle="dropdown" aria-type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle" role="button" data-toggle="dropdown"
+                        aria-type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Owners
                     </button>
-                    <ul id="dropup con" class="dropdown-menu" style="">
-                        <li><a class="dropdown-item conli" href="https://www.linkedin.com/in/vasu-pandey-21581b225">Vasu Pandey</a></li>
-                        <li><a class="dropdown-item conli" href="index">Nandini Thakur</a></li>
-                        <li><a class="dropdown-item conli" href="index">Surbhi Soni</a></li>
-                        <li><a class="dropdown-item conli" href="index">Swati Nanda Gupta</a></li>
+                    <ul id="dropup con" class="dropdown-menu">
+                        <li><a class="dropdown-item conli" href="https://www.linkedin.com/in/vasu-pandey-21581b225">Vasu
+                                Pandey</a></li>
+                        <li><a class="dropdown-item conli" href="{{ url_for('index') }}">Swati Nanda Gupta</a></li>
+                        <li><a class="dropdown-item conli" href="{{ url_for('index') }}">Nandini Thakur</a></li>
+                        <li><a class="dropdown-item conli" href="{{ url_for('index') }}">Surbhi Soni</a></li>
                     </ul>
                 </div>
-
                 <br>
                 <div class="social">
                     <a href="https://github.com/NGswati/BIG_ALLEY_HOMES"><i class="fa-brands fa-github fa-xl"></i></a>
@@ -336,7 +425,7 @@
 
 
     <script src="{{ url_for('static', filename='jquery-3.1.1.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+   
     <script src="{{ url_for('static', filename='fontawesome.min.js') }}"></script>
     <script src="{{ url_for('static', filename='brands.min.js') }}"></script>
     <script src="{{ url_for('static', filename='solid.min.js') }}"></script>
@@ -345,6 +434,12 @@
     <script src="{{ url_for('static', filename='full-screen-nav.js') }}"></script>
     <script src="{{ url_for('static', filename='maps.js') }}"></script>
     <script src="{{ url_for('static', filename='plugin.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
+    
 </body>
 
 </html>

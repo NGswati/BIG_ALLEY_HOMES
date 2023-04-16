@@ -13,8 +13,8 @@
     <h1>MySQL Data</h1>
     <table>
       <tr>
-        {% for column in data[0] %}
-        <th> column </th>
+        {% for column in column_names %}
+        <th> {{column}} </th>
         {% endfor %}
       </tr>
       {% for row in data[0:] %}

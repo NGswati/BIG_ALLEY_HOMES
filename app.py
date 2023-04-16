@@ -8,6 +8,7 @@ from jinja2 import FileSystemLoader
 import pandas as pd
 import matplotlib
 matplotlib.use('agg')
+from flask_bootstrap import Bootstrap
 
 import matplotlib.pyplot as plt
 import io
@@ -15,6 +16,7 @@ import base64
 
 
 app=Flask(__name__)
+bootstrap = Bootstrap(app)
 app.config['STATIC_FOLDER'] = 'static'
 
 
@@ -44,6 +46,7 @@ def  agent():
 def handle_agent():
     Name = request.form.get('Name')
     password = request.form.get('password')
+    print(Name)
     
     if password is not None:
         password = int(password)
@@ -56,10 +59,80 @@ def handle_agent():
     results = cur.fetchall()
     if len(results) > 0:
         cur.execute("Select * from available where agent_id={}".format(password))
+        column_names = [desc[0] for desc in cur.description]
         re=cur.fetchall()
-        return render_template('final.html',data=re)
+        return render_template('agent.html',data=re,column_names=column_names)
     else:
-        return "Invalid entry"
+        return render_template('login.html')
+
+@app.route('/rent_forms', methods=['POST'])
+def rent_forms():
+    name=request.form.get('name')
+    house_no=int(request.form.get('house_no'))
+    street_name=request.form.get('street_name')
+    year_of_rent=int(request.form.get('year_of_rent'))
+    tenant=request.form.get('tenant')
+    agent_id=int(request.form.get('agent_id'))
+    print('hello')
+    cur = mysql.connection.cursor()
+    print(name)
+    print(house_no)
+    print(street_name)
+    try:
+        cur.execute("update available set status='rented' where agent_id={} and house_no={} and street='{}'".format(agent_id, house_no, street_name))
+        cur.execute("update  rent set rented_to='{}' where house_no={} and street='{}'".format(tenant,house_no,street_name))
+        cur.execute("update  rent set year_of_rent={} where house_no={} and street='{}' ".format(year_of_rent,house_no,street_name))
+        mysql.connection.commit()
+        cur.close()
+        return render_template('last.html',agent_id=agent_id,name=name)
+    except Exception as e:
+        print(e)
+        return render_template('login.html')
+    
+@app.route('/sell_forms', methods=['POST'])
+def sell_forms():
+    name=request.form.get('name')
+    house_no=int(request.form.get('house_no'))
+    street_name=request.form.get('street_name')
+    year_of_sale=int(request.form.get('year_of_sale'))
+    new=request.form.get('new')
+    agent_id=int(request.form.get('agent_id'))
+    print('hello')
+    cur = mysql.connection.cursor()
+    print(name)
+    print(house_no)
+    print(street_name)
+    try:
+        cur.execute("update available set status='sold' where agent_id={} and house_no={} and street='{}'".format(agent_id, house_no, street_name))
+        cur.execute("update  house set owner ='{}' where house_no={} and street='{}'".format(new,house_no,street_name))
+        cur.execute("update  sold set year_of_sale={} where house_no={} and street='{}' ".format(year_of_sale,house_no,street_name))
+        mysql.connection.commit()
+        cur.close()
+        return render_template('last.html',agent_id=agent_id,name=name)
+    except Exception as e:
+        print(e)
+        return render_template('login.html')
+    
+@app.route('/redirect',methods=['POST','GET'])
+def redirect():
+    cur = mysql.connection.cursor()
+    name = request.args.get('name')
+    agent_id = request.args.get('agent_id')
+    print(name)
+    print(type(agent_id))
+    print(agent_id)
+    cur.execute("SELECT * FROM agent where agent_id=%s and name=%s", (agent_id, name))
+
+    results = cur.fetchall()
+    if len(results) > 0:
+        cur.execute("Select * from available where agent_id={}".format(agent_id))
+        re=cur.fetchall()
+        return render_template('agent.html',data=re)
+    else:
+        return render_template('login.html')
+
+    
+
 
 @app.route('/admin')
 def  admin():
@@ -80,17 +153,19 @@ def fetch_tables():
     cur = mysql.connection.cursor()
     table_name = request.form.get('table')
     cur.execute("SELECT * FROM {}".format(table_name))
+    column_names = [desc[0] for desc in cur.description]
     results = cur.fetchall()
     cur.close()
-    return render_template('table.html',data=results)
+    return render_template('table.html',data=results,column_names=column_names)
 
 @app.route('/rent',methods=['POST'])
 def sales():
     cur = mysql.connection.cursor()
     cur.execute("select * from rent natural join agent natural join available")
     results = cur.fetchall()
+    column_names = [desc[0] for desc in cur.description]
     cur.close()
-    return render_template('table.html',data=results)
+    return render_template('table.html',data=results,column_names=column_names)
 
 @app.route('/sales_rent', methods=['POST','GET'])
 def sales_rent():
@@ -105,6 +180,7 @@ def sales_rent():
     results = cur.fetchall()
     cur.execute("select rent.house_no,rent.street,rent.agent_id,rent.year_of_rent,agent.name,house.landmark,house.pincode,house.size,house.year_of_cons,available.price from rent natural join agent natural join house natural join available where agent.agent_id={};".format(id))
     results1 = cur.fetchall()
+    column_names = [desc[0] for desc in cur.description]
 
     # combine sales and rent data into a single list
     data = results + results1
@@ -128,7 +204,7 @@ def sales_rent():
         print(f"An exception occurred: {e}")
 
     # render the template with the data and the generated chart
-    return render_template('table_rent_sale.html', data=data)
+    return render_template('table_rent_sale.html', data=data,column_names=column_names)
 
 @app.route('/plot', methods=['POST','GET'])
 def plot():
