@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='fav.png') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='agent.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='responsive.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='project-style.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cover.css') }}"/>
+    <script src="{{ url_for('static', filename='fontawesome.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='brands.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='solid.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='TweenMax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='full-screen-nav.js') }}"></script>
+    <script src="{{ url_for('static', filename='maps.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugin.js') }}"></script>
+    <style>
+        .menu__item-map {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url("{{ url_for('static', filename='dl.jpg') }}") no-repeat 50% 50%;
+            background-size: cover;
+            transition: transform 0.8s cubic-bezier(0.2, 1, 0.8, 1);
+        }
+
+        body {
+            background-color: rgb(208, 205, 205);
+        }
+
+        .grid div {
+            border: 1px solid;
+            background-image: url("{{ url_for('static', filename='block2.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            opacity: 70%;
+        }
+
+        #footer {
+            background-color: rgb(223, 153, 109);
+        }
+
+        .footer {
+            background: #2b5398;
+            color: azure;
+            border-radius: 5rem 0 0 0;
+            opacity: 100%;
+            background-image: "{{ url_for('static', filename='footer.png') }}";
+            padding: 4%;
+        }
+        #tables-view-agent{
+        height:60%;
+        margin-top:5%;
+        margin-bottom:2%;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow-y:auto;
+}
+        #tab-sec{
+            margin-bottom:0;
+        }
+<!--        #tab-sec{-->
+<!--        display: block;-->
+<!--        padding: 20px;-->
+<!--        margin-bottom: 20px;-->
+<!--        position:absolute;-->
+<!--        top:20%;-->
+<!--        left:50%;-->
+}
+
+        #tab4 {
+            overflow: auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(45deg, #49a09d, #5f2c82);
+            position: relative;
+            left: 50%;
+            top: 100%%;
+            transform: translate(-50%, -50%);
+            margin-bottom: 3%;
+            margin-top:3%;
+        }
+
+
+        th,
+        td {
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        th {
+            background-color: #55608f;
+        }
+
+        td:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+    </style>
+
+</head>
+
+<body class="main-body">
+
+<svg class="hidden" width="800px" height="800px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+    <g fill-rule="evenodd">
+        <symbol id="icon-menu" id="invisible_box" data-name="invisible box" viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg">
+            <title>menu-hamburger</title>
+            <path d="M42,12a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2H6a2,2,0,0,1,2-2H40a2,2,0,0,1,2,2Z"/>
+            <path d="M42,24a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2H6a2,2,0,0,1,2-2H40a2,2,0,0,1,2,2Z"/>
+            <path d="M42,36a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2H6a2,2,0,0,1,2-2H40a2,2,0,0,1,2,2Z"/>
+
+        </symbol>
+        <g fill-rule="evenodd">
+            <symbol id="icon-close" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+                <title>close</title>
+                <path d="M0 92.168 92.299 0l959.931 959.935L92.299 1920 0 1827.57l867.636-867.635L0 92.168Z"/>
+                <path
+                        d="M868 92.168 960.299 0l959.931 959.935L960.299 1920 868 1827.57l867.64-867.635L868 92.168Z"/>
+            </symbol>
+        </g>
+</svg>
+
+
+<main>
+    <div class="frame">
+        <header class="header--logo">
+            <div class="logo--links">
+                <img width="60%" src="{{ url_for('static', filename='bab.png') }}"/>
+
+            </div>
+        </header>
+    </div>
+
+
+    <div class="menu-wrapper">
+        <img class="d-block w-100" src="{{ url_for('static', filename='agent-bg.jpg') }}" alt="First slide">
+
+        <h5 id="heading">
+            <p id="heading">AGENT </p><br><br><br><br><br> Sell and Rent Property
+        </h5>
+
+    </div>
+
+    <nav class="menu menu-index">
+
+        <div class="menu__item menu__item--1" data-direction="bt">
+            <div class="menu__item-inner">
+                <div class="mainmenu">
+                    <a href="{{ url_for('index') }}" class="mainmenu__item">Home</a>
+                    <a href="{{ url_for('agent') }}" class="mainmenu__item">Agent</a>
+                    <a href="{{ url_for('agent_office') }}" class="mainmenu__item">Agent Office</a>
+                    <a href="{{ url_for('admin') }}" class="mainmenu__item">Admin</a>
+                    <a href="{{ url_for('contact') }}" class="mainmenu__item">Contact Us</a>
+                </div>
+                <p class="label label--topleft label--vert-mirror">-- made with ♡ --</p>
+                <p class="label label--bottomright label--vert">-- made with ♡ --</p>
+            </div>
+        </div>
+        <div class="menu__item menu__item--2" data-direction="lr">
+            <div class="menu__item-inner">
+                <div class="menu__item-map"></div>
+                <a href="{{ url_for('index') }}" class="menu__item-hoverlink">Navigate With Ease</a>
+            </div>
+        </div>
+        <div class="menu__item menu__item--3" data-direction="bt">
+            <div class="menu__item-inner">
+                <div class="sidemenu">
+                    <p font="bold" class="sidemenu__item"><span class="sidemenu__item-inner">Home is <br><br> the
+                                starting place <br><br> of Love <br><br> Hope <br><br> & Dreams.</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="menu__item menu__item--4" data-direction="rl">
+            <div class="menu__item-inner">
+                <p class="label label--topleft label--line">Join us now</p>
+                <!-- <a href="{{ url_for('index') }}" class="menu__item-link">Learn how to <br> participate</a> -->
+            </div>
+        </div>
+        <div class="menu__item menu__item--5" data-direction="tb">
+            <div class="menu__item-inner">
+                <p class="quote">Warm Greetings From the BIG ALLEY Team !!</p>
+            </div>
+        </div>
+        <button class="action action--menu">
+            <svg class="icon icon--menu">
+                <use xlink:href="{{ url_for('index') }}icon-menu"></use>
+            </svg>
+        </button>
+        <button class="action action--close">
+            <svg class="icon icon--close">
+                <use xlink:href="{{ url_for('index') }}icon-close"></use>
+            </svg>
+        </button>
+    </nav>
+</main>
+
+<!-- Main -->
+<main class="main">
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <section id="tab-sec">
+
+        <h1>HOUSES ASSIGNED CURRENTLY</h1>
+        <table id="tab4">
+            <tr>
+                {% for column in column_names %}
+                <th> {{column}}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data[0:] %}
+            <div>
+                <tr class='green'>
+                    {% for column in row %}
+                    <td>{{ column }}</td>
+                    {% endfor %}
+                </tr>
+            </div>
+            {% endfor %}
+        </table>
+
+    </section>
+
+    <section class="tab" id="rent">
+        <h1>RENT HOUSE</h1>
+        <h4> Agent can rent houses by providing all the details into the form given below.</h4>
+        <form method='POST' action="/rent_forms">
+            <div>
+                <span>Enter User Name</span>
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+            </div>
+            <div>
+                <span>Enter House Number</span>
+                <input type="text" name="house_no" id="house_no" placeholder="House Number" required>
+            </div>
+            <div>
+                <span>Enter Street Name</span>
+                <input type="text" name="street_name" id="street_name" placeholder="Street Name" required>
+            </div>
+            <div>
+                <span>Enter Year of Rent</span>
+                <input type="text" name="year_of_rent" id="year_of_rent" placeholder="Year of Rent" required>
+            </div>
+            <div>
+                <span>Enter Name of Tenant</span>
+                <input type="text" name="tenant" id="tenant" placeholder="Name of tenant" required>
+            </div>
+            <div>
+                <span>Enter Agent ID</span>
+                <input type="password" name="agent_id" id="agent_id" placeholder="Password" required>
+            </div>
+            <br>
+            <input type="submit" value="RENT SUBMIT" class="button" id="b1">
+        </form>
+    </section>
+    <section class="tab" id="sold">
+        <h1>SELL HOUSE</h1>
+        <h4>Agent can sell houses by providing all the details into the form given below.</h4>
+        <form method='POST' action="/sell_forms">
+            <div>
+                <span>Enter User Name</span>
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+            </div>
+            <div>
+                <span>Enter House Number</span>
+                <input type="text" name="house_no" id="house_no" placeholder="House Number" required>
+            </div>
+            <div>
+                <span>Enter Street Name</span>
+                <input type="text" name="street_name" id="street_name" placeholder="Street Name" required>
+            </div>
+            <div>
+                <span>Enter Year of Sale</span>
+                <input type="text" name="year_of_sale" id="year_of_sale" placeholder="Year of Sale" required>
+            </div>
+            <div>
+                <span>Enter Name of New Owner</span>
+                <input type="text" name="new" id="new" placeholder="Name of New Owner" required>
+            </div>
+            <div>
+                <span>Enter Agent ID</span>
+                <input type="password" name="agent_id" id="agent_id" placeholder="Password" required>
+            </div>
+            <br>
+            <input type="submit" value="SELL SUBMIT" class="button" id="b1">
+        </form>
+    </section>
+
+</main>
+<section class="footer" id="footer">
+    <div class="footer-container container">
+        <h2 id="foot2">BIG ALLEY HOMES</h2>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('agent') }}">Agent</a>
+            <a href="{{ url_for('agent_office') }}">Agent Office</a>
+            <a href="{{ url_for('admin') }}">Admin</a>
+
+        </div>
+
+
+        <div class="footer-box">
+            <h3>Contact
+            </h3>
+            <div id="btn-out" class="dropup">
+                <button class="btn btn-secondary dropdown-toggle" role="button" data-toggle="dropdown"
+                        aria-type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Owners
+                </button>
+                <ul id="dropup con" class="dropdown-menu">
+                    <li><a class="dropdown-item conli" href="https://www.linkedin.com/in/vasu-pandey-21581b225">Vasu
+                        Pandey</a></li>
+                    <li><a class="dropdown-item conli" href="https://github.com/NGswati">Swati Nanda Gupta</a></li>
+                    <li><a class="dropdown-item conli" href="https://www.linkedin.com/in/nandini-thakur-a1458b22a">Nandini Thakur</a></li>
+                    <li><a class="dropdown-item conli" href="https://www.linkedin.com/in/surbhi-soni-a1259a255/">Surbhi Soni</a></li>
+                </ul>
+            </div>
+
+            <br>
+            <div class="social">
+                <a href="https://github.com/NGswati/BIG_ALLEY_HOMES"><i class="fa-brands fa-github fa-xl"></i></a>
+                &nbsp;&nbsp;
+                <a href="index copy.html"><i class="fa-solid fa-house fa-xl"></i></a>
+                &nbsp;&nbsp;
+                <a href="https://docs.google.com/document/d/1qvDTFUKcrgn6nu3WPBQ5vOUJ0Fm1d9jB6CmHhrpNh2s/edit"><i
+                        class="fa-brands fa-dochub fa-xl"></i></a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p id="copyright">© Copyright 2000 | Big Alley Homes </p>
+    </div>
+</section>
+<script src="{{ url_for('static', filename='fontawesome.min.js') }}"></script>
+<script src="{{ url_for('static', filename='brands.min.js') }}"></script>
+<script src="{{ url_for('static', filename='solid.min.js') }}"></script>
+<script src="{{ url_for('static', filename='imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='TweenMax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='full-screen-nav.js') }}"></script>
+<script src="{{ url_for('static', filename='maps.js') }}"></script>
+<script src="{{ url_for('static', filename='plugin.js') }}"></script>
+<!-- <script src="js/agent.js"></script> -->
+</body>
+
+</html>
