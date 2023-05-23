@@ -1,0 +1,21 @@
+.horizontal-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.horizontal-list li {
+    flex-basis: calc(20% - 20px);
+    margin: 0px 10px;
+}
+
+.horizontal-list li a {
+    display: block;
+    padding: 0px 10px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+}

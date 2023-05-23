@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Server Data</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='table.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='fav.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+  <style>
+    .head-b {
+      display: block;
+    }
+
+    #img-logo {
+      width: 25%;
+      font-size: 16;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="head-b">
+    <div class="nav container">
+      <a href="{{ url_for('index') }}" class="logo"><img id="img-logo" src="{{ url_for('static', filename='bab.png') }}"
+          width="14px"> BIG ALLEY HOMES</a>
+      <ul class="horizontal-list">
+        <li><a href="{{ url_for('agent') }}">Agent</a></li>
+        <li><a href="{{ url_for('agent_office') }}">Office</a></li>
+        <li><a href="{{ url_for('admin') }}">Admin</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  <h1 style="margin-top:7%; margin-bottom:5%;">Desired Data <br> from the Server</h1>
+  <div style="margin-top:10%; margin-bottom:5%;" id="tables-view">
+
+    <table>
+      <tr>
+        {% for column in column_names %}
+        <th> {{column}}</th>
+        {% endfor %}
+      </tr>
+      {% for row in data[1:] %}
+      <div class="green">
+        <tr class='green'>
+          {% for column in row %}
+          <td>{{ column }}</td>
+          {% endfor %}
+        </tr>
+      </div>
+      {% endfor %}
+    </table>
+  </div>
+</body>
+
+</html>

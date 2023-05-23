@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=800, initial-scale=1.0">
+    <title>Rerender Page</title>
+    
+</head>
+<style>
+    body {
+        background: url("{{ url_for('static', filename='block2.jpg') }}");
+        background-size: cover;
+        background-position: center;
+    }
+    div{
+        margin:10px;
+        padding: 50px 50px;
+        background: #fff;
+        border-radius: 10px;
+        opacity:40%;
+    }
+    h1{
+        opacity:100%;
+    }
+    botton{
+        opacity:100%;
+    }
+
+    #final{
+        position:absolute;
+        left:38%;
+        top:38%;
+        opacity:90%;
+
+    }
+
+    #final-btn{
+        height:8%;
+        width:60%;
+    }
+</style>
+
+<body>
+
+<div id="final">
+    <h1>Sucessfully Done</h1>
+
+<button type="button" id="final-btn" class="btn btn-primary"
+    onclick="window.location.href='{{ url_for('redirectt', name=name,agent_id=agent_id) }}'">Go to other route</button>
+</div>
+</body>
+</html>

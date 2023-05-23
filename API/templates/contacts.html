@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Alley | Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='table.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css')}}">
+    <link rel="icon" href="{{ url_for('static', filename='fav.png') }}">
+
+</head>
+
+<body>
+    <header class="head-b">
+        <div class="nav container">
+            <a href="{{ url_for('index') }}" class="logo"><img id="img-logo"
+                    src="{{ url_for('static', filename='bab.png') }}" width="14px"> BIG ALLEY HOMES</a>
+            <ul class="horizontal-list">
+                <li><a href="{{ url_for('agent') }}">Agent</a></li>
+                <li><a href="{{ url_for('agent_office') }}">Office</a></li>
+                <li><a href="{{ url_for('admin') }}">Admin</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </div>
+        <style>
+            #con-tab{
+                position: absolute;
+                left:28%;
+                top:45%;
+            }
+        </style>
+    </header>
+    
+    <table id="con-tab">
+        <tr>
+            <th>Owners Of Big Alley</th>
+        </tr>
+        <tr >
+            <td><a href="https://www.linkedin.com/in/vasu-pandey-21581b225">Vasu Pandey</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://www.linkedin.com/in/nandini-thakur-a1458b22a">Nandini Thakur</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://www.linkedin.com/in/surbhi-soni-a1259a255/">Surbhi Soni</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/NGswati">Swati Nanda Gupta</a></td>
+        </tr>
+    </table>  
+
+</body>
+
+</html>

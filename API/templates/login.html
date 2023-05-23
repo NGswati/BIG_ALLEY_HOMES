@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=800, initial-scale=1.0">
+    <title>Agent Login</title>
+    <link rel="icon" href="{{ url_for('static', filename='fav.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='boxicons.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='listings.css')}}">
+</head>
+<style>
+    body {
+        background: url("{{ url_for('static', filename='log.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+    }
+
+    #img-logo {
+        width: 25%;
+        font-size: 16;
+    }
+
+    .head-b{
+        display: block;
+
+    }
+
+    #login-image {
+        width: 60%;
+        background-position: center;
+        text-align: center;
+        border-radius: 100%;
+        padding: 100px;
+        position: relative;
+        left: 20%;
+        opacity: 90%;
+    }
+</style>
+
+<body>
+    <header class="head-b">
+        <div class="nav container">
+            <a href="{{ url_for('index') }}" class="logo"><img id="img-logo" src="{{ url_for('static', filename='bab.png') }}" width="14px"> BIG ALLEY HOMES</a>
+            <ul class="horizontal-list">
+                <li><a href="{{ url_for('agent') }}">Agent</a></li>
+                <li><a href="{{ url_for('agent_office') }}">Office</a></li>
+                <li><a href="{{ url_for('admin') }}">Admin</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="login container">
+        <!-- <div class="login-container">
+            <h2>Login To Continue</h2>
+            <p>Log in with your data that you entered <br>during your registration</p>
+            <form action="/handle_agent" , method='POST'>
+                <span>Enter User Name</span>
+                <input type="text" name="Name" id="Name" placeholder="Your Name" required>
+                <span>Enter Agent ID</span>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="submit" value="Log In" class="buttom">
+            </form>
+        </div>
+        <div id="login-image">
+
+        </div> -->
+
+        <div id="tab3" class="center">
+            <h1 id="boxl">Login With Your Credentials </h1>
+            <form method="POST" action="/handle_agent">
+                <div class="inputbox">
+                    <input type="text" name="Name" id="Name" placeholder="" required="required">
+                    <span>Agent Name</span>
+                </div>
+                <div class="inputbox">
+                    <input type="password" name="password" id="password" placeholder="" required="required">
+                    <span>Password</span>
+                </div>
+                <div class="inputbox">
+                    <input id="sub-btn" type="submit" value="Log In" class="buttom">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
